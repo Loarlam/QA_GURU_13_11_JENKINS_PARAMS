@@ -25,7 +25,7 @@ public class TestBaseIncludingBeforeAndAfterTests {
         Configuration.browser = System.getProperty("browser", "chrome");
         Configuration.browserVersion = System.getProperty("version", "100");
         Configuration.browserSize = System.getProperty("resolution", "1920x1080");
-        Configuration.remote = "https://" + credentialsConfig.login() +":"+ credentialsConfig.password() + "@" + System.getProperty("link");
+        Configuration.remote = "https://" + credentialsConfig.login() + ":" + credentialsConfig.password() + "@" + String.format("%s", System.getProperty("link"));
 
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability("enableVNC", true);
