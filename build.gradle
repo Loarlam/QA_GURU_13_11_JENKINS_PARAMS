@@ -12,7 +12,7 @@ repositories {
 
 def allureVersion = "2.18.1",
     testNgVersion = '7.6.0',
-    selenideVersion = "6.5.1",
+    selenideVersion = '6.6.3',
     junitVersion = "5.8.2",
     slf4jVersion = '1.7.36',
     javaFakerVersion = '1.0.2',
