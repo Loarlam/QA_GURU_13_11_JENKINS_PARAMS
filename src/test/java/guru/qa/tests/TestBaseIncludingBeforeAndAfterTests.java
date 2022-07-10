@@ -20,13 +20,14 @@ public class TestBaseIncludingBeforeAndAfterTests {
     static void beforeAllTests() {
         SelenideLogger.addListener("Allure", new AllureSelenide());
 
+        String remoteLink = System.getProperty("remoteLink");
+        Configuration.remote = "https://" + credentialsConfig.login() +":"+ credentialsConfig.password() + "@" + remoteLink;
+
         Configuration.baseUrl = "https://demoqa.com";
         Configuration.browserPosition = "0x0";
         Configuration.browser = System.getProperty("browser", "chrome");
         Configuration.browserVersion = System.getProperty("version", "100");
         Configuration.browserSize = System.getProperty("resolution", "1920x1080");
-        String remoteLink = System.getProperty("remoteLink");
-        Configuration.remote = "https://" + credentialsConfig.login() +":"+ credentialsConfig.password() + "@" + remoteLink;
 
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability("enableVNC", true);
