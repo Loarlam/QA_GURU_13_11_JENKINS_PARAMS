@@ -20,18 +20,17 @@ public class TestBaseIncludingBeforeAndAfterTests {
     static void beforeAllTests() {
         SelenideLogger.addListener("Allure", new AllureSelenide());
 
-        DesiredCapabilities capabilities = new DesiredCapabilities();
-        capabilities.setCapability("enableVNC", true);
-        capabilities.setCapability("enableVideo", true);
-
-        Configuration.browserCapabilities = capabilities;
         Configuration.baseUrl = "https://demoqa.com";
         Configuration.browserPosition = "0x0";
         Configuration.browser = System.getProperty("browser", "chrome");
-        Configuration.browserVersion = System.getProperty("browserVersion", "101");
+        Configuration.browserVersion = System.getProperty("version", "101");
         Configuration.browserSize = System.getProperty("resolution", "1920x1080");
-        Configuration.browserCapabilities = capabilities;
         Configuration.remote = "https://" + credentialsConfig.login() + credentialsConfig.password() + "@" + System.getProperty("link");
+
+        DesiredCapabilities capabilities = new DesiredCapabilities();
+        capabilities.setCapability("enableVNC", true);
+        capabilities.setCapability("enableVideo", true);
+        Configuration.browserCapabilities = capabilities;
     }
 
     @AfterAll
