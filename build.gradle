@@ -18,6 +18,12 @@ def allureVersion = "2.18.1",
     javaFakerVersion = '1.0.2',
     aeonbitsVersion = '1.0.12'
 
+compileJava.options.encoding = 'UTF-8'
+
+tasks.withType(JavaCompile) {
+    options.encoding = 'UTF-8'
+}
+
 allure {
     report {
         version.set(allureVersion)
@@ -56,8 +62,7 @@ tasks.withType(Test) {
 }
 
 task taskWithTagDemoqa(type: Test) {
-    systemProperties(System.getProperties())
     useJUnitPlatform {
-        includeTags "demoqa"
+        includeTags "demoqaTag"
     }
 }

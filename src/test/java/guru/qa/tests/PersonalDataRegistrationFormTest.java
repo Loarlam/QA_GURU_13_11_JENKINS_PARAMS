@@ -7,7 +7,7 @@ import org.junit.jupiter.api.Test;
 
 public class PersonalDataRegistrationFormTest extends TestBaseIncludingBeforeAndAfterTests {
     @Test
-    @Tag("demoqa")
+    @Tag("demoqaTag")
     @Owner("Loarlam")
     @Severity(SeverityLevel.TRIVIAL)
     @Feature("Удаленные запуски автотестов с помощью Jenkins")

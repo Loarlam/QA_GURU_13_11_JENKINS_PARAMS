@@ -23,7 +23,7 @@ public class TestBaseIncludingBeforeAndAfterTests {
         Configuration.baseUrl = "https://demoqa.com";
         Configuration.browserPosition = "0x0";
         Configuration.browser = System.getProperty("browser", "chrome");
-        Configuration.browserVersion = System.getProperty("version", "101");
+        Configuration.browserVersion = System.getProperty("version", "100");
         Configuration.browserSize = System.getProperty("resolution", "1920x1080");
         Configuration.remote = "https://" + credentialsConfig.login() +":"+ credentialsConfig.password() + "@" + System.getProperty("link");
 
