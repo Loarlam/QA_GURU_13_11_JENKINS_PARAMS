@@ -20,9 +20,9 @@ public class TestBaseIncludingBeforeAndAfterTests {
     static void beforeAllTests() {
         SelenideLogger.addListener("Allure", new AllureSelenide());
 
-        String remoteLink = System.getProperty("remoteLink");
-        Configuration.remote = "https://" + credentialsConfig.login() + ":" + credentialsConfig.password() + "@" + remoteLink;
-
+        /*String remoteLink = System.getProperty("remoteLink");
+        Configuration.remote = "https://" + credentialsConfig.login() + ":" + credentialsConfig.password() + "@" + remoteLink;*/
+        Configuration.remote = String.format("https://%s:%s@%s", credentialsConfig.login(), credentialsConfig.password(), System.getProperty("remoteLink"));
         Configuration.baseUrl = "https://demoqa.com";
         Configuration.browserPosition = "0x0";
         Configuration.browser = System.getProperty("browser", "chrome");
