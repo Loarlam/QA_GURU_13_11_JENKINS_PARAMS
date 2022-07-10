@@ -9,3 +9,4 @@ build/
 target/
 gradlew
 gradlew.bat
+/src/test/resources/config/credentials.properties
