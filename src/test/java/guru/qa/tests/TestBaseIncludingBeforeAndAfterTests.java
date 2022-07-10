@@ -20,12 +20,12 @@ public class TestBaseIncludingBeforeAndAfterTests {
     static void beforeAllTests() {
         SelenideLogger.addListener("Allure", new AllureSelenide());
 
-        Configuration.remote = "https://" + credentialsConfig.login() +":"+ credentialsConfig.password() + "@" + System.getProperty("remoteLink");
+        Configuration.remote = "https://" + credentialsConfig.login() + ":" + credentialsConfig.password() + "@" + System.getProperty("remoteLink");
 
         Configuration.baseUrl = "https://demoqa.com";
         Configuration.browserPosition = "0x0";
         Configuration.browser = System.getProperty("browser", "chrome");
-        Configuration.browserVersion = System.getProperty("version", "100");
+        Configuration.browserVersion = System.getProperty("version");
         Configuration.browserSize = System.getProperty("resolution", "1920x1080");
 
         DesiredCapabilities capabilities = new DesiredCapabilities();
