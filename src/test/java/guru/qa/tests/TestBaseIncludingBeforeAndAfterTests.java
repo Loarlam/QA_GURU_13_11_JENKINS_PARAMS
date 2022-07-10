@@ -15,7 +15,6 @@ public class TestBaseIncludingBeforeAndAfterTests {
     PageOfRegistrationForm pageOfRegistrationForm = new PageOfRegistrationForm();
     DataForTheTest dataForTheTest = new DataForTheTest();
     static CredentialsConfig credentialsConfig = ConfigFactory.create(CredentialsConfig.class);
-    static String remoteLink = System.getProperty("link");
 
     @BeforeAll
     static void beforeAllTests() {
@@ -26,6 +25,7 @@ public class TestBaseIncludingBeforeAndAfterTests {
         Configuration.browser = System.getProperty("browser", "chrome");
         Configuration.browserVersion = System.getProperty("version", "100");
         Configuration.browserSize = System.getProperty("resolution", "1920x1080");
+        String remoteLink = System.getProperty("link");
         Configuration.remote = "https://" + credentialsConfig.login() +":"+ credentialsConfig.password() + "@" + remoteLink;
 
         DesiredCapabilities capabilities = new DesiredCapabilities();
