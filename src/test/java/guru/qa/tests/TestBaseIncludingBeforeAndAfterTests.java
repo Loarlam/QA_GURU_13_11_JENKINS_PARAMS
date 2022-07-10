@@ -25,7 +25,7 @@ public class TestBaseIncludingBeforeAndAfterTests {
         Configuration.browser = System.getProperty("browser", "chrome");
         Configuration.browserVersion = System.getProperty("version", "100");
         Configuration.browserSize = System.getProperty("resolution", "1920x1080");
-        String remoteLink = System.getProperty("link");
+        String remoteLink = System.getProperty("remoteLink");
         Configuration.remote = "https://" + credentialsConfig.login() +":"+ credentialsConfig.password() + "@" + remoteLink;
 
         DesiredCapabilities capabilities = new DesiredCapabilities();
