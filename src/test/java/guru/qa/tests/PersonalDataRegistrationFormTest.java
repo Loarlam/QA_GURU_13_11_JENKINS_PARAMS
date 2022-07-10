@@ -2,6 +2,7 @@ package guru.qa.tests;
 
 import io.qameta.allure.*;
 import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
 public class PersonalDataRegistrationFormTest extends TestBaseIncludingBeforeAndAfterTests {
@@ -12,6 +13,7 @@ public class PersonalDataRegistrationFormTest extends TestBaseIncludingBeforeAnd
     @Story("Jenkins тянет код из гита, при отработке которого формируется отчёт в Allure Report")
     @Description("Методика запуска автотестов посредством подтягивания кода из github в Jenkins, с выводом отчёта Allure, позволяет решить проблему привязки к локальной машине")
     @Link(name = "Demoqa", url = "https://demoqa.com/automation-practice-form")
+    @Tag("demoqa")
     @DisplayName("Заполнение формы сайта demoqa.com данными, с последующей сверкой результатов с итоговым выводом")
     void successfulTest() {
         pageOfRegistrationForm.openingWebsiteWithoutAds()
